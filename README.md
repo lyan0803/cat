@@ -23,35 +23,36 @@ truffle migrate
 ### DeedToken.sol 코드 설명 - 사용할 코드만
 
 1) 토큰 발행 : mint()
+
 ''' Solidity
-    function mint() external payable {
-   
-        uint tokenId = allTokens.push(1) - 1;
-        //token id starts from 0, index of assets array
-        tokenOwners[tokenId] = msg.sender;
-        balances[msg.sender] = balances[msg.sender].add(1);
+       function mint() external payable {
 
-        //for enumeration
-        allValidTokenIndex[tokenId] = allValidTokenIds.length;
-        //index starts from 0
-        allValidTokenIds.push(tokenId);
+           uint tokenId = allTokens.push(1) - 1;
+           //token id starts from 0, index of assets array
+           tokenOwners[tokenId] = msg.sender;
+           balances[msg.sender] = balances[msg.sender].add(1);
 
-        emit Transfer(address(0), msg.sender, tokenId);
-    }
+           //for enumeration
+           allValidTokenIndex[tokenId] = allValidTokenIds.length;
+           //index starts from 0
+           allValidTokenIds.push(tokenId);
+
+           emit Transfer(address(0), msg.sender, tokenId);
+       }
 '''
 
 
 2) 토큰 전송 : safeTransferFrom()
 ''' Solidity
-   function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable {
-        safeTransferFrom(_from, _to, _tokenId, "");
-    }
+      function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable {
+           safeTransferFrom(_from, _to, _tokenId, "");
+       }
 '''
 
 3) 토큰 잔액 조회 : balanceOf()
 ''' Solidity
-    function balanceOf(address _owner) external view returns (uint256) {
-        require(_owner != address(0));
-        return balances[_owner];
-    }
+       function balanceOf(address _owner) external view returns (uint256) {
+           require(_owner != address(0));
+           return balances[_owner];
+       }
 '''
