@@ -10,13 +10,15 @@ https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpg
 
 
 그 다음 truffle 프레임워크를 설치합니다.
-   npm install -g truffle
+
+      npm install -g truffle
    
 
 컨트랙트를 배포할 때는 먼저 컨트랙트를 컴파일 후 migrate 합니다.
 
-   truffle compile --all
-   truffle migrate
+      truffle compile --all
+
+      truffle migrate
 
 
 ------------
