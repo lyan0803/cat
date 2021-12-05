@@ -14,10 +14,10 @@ https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpg
    
 
 컨트랙트를 배포할 때는 먼저 컨트랙트를 컴파일 후 migrate 합니다.
-'''
-truffle compile --all
-truffle migrate
-'''
+
+   truffle compile --all
+   truffle migrate
+
 
 ------------
 ### DeedToken.sol 코드 설명 - 사용할 코드만
