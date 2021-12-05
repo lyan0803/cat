@@ -43,9 +43,9 @@ truffle migrate
 
 2) 토큰 전송 : safeTransferFrom()
 
-      function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable {
-           safeTransferFrom(_from, _to, _tokenId, "");
-       }
+         function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable {
+              safeTransferFrom(_from, _to, _tokenId, "");
+          }
 
 
 3) 토큰 잔액 조회 : balanceOf()
