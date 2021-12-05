@@ -25,8 +25,6 @@ truffle migrate
 1) 토큰 발행 : mint()
 ''' Solidity
     function mint() external payable {
-
-        // asset memory newAsset = asset(_x, _y, _z);
    
         uint tokenId = allTokens.push(1) - 1;
         //token id starts from 0, index of assets array
@@ -44,14 +42,14 @@ truffle migrate
 
 
 2) 토큰 전송 : safeTransferFrom()
-'''Solidity
+''' Solidity
    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable {
         safeTransferFrom(_from, _to, _tokenId, "");
     }
 '''
 
 3) 토큰 잔액 조회 : balanceOf()
-'''Solidity
+''' Solidity
     function balanceOf(address _owner) external view returns (uint256) {
         require(_owner != address(0));
         return balances[_owner];
